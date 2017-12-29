@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<table>
+	<a href="/online/create.index.html">留意</a>
+	<thead>
+		<tr>
+			<th>时间</th>
+			<th>用户</th>
+			<th>标题</th>
+			<th>内容</th>
+		</tr>
+	</thead>
+	<tbody>
+		{% if messages %}
+			{% for message in messages %}
+			<tr>
+				<td>{{ message.publish_date|date:'Y-m-d H:i:s'}}</td>
+				<td>{{ message.username}}</td>
+				<td>{{ message.title}}</td>
+				<td>{{ message.conten}}</td>
+			</tr>
+			{% endfor %}
+		{% else%}
+			<tr><td colspan="4">暂无数据</td></tr>
+		{% endid %}
+	</tbody>
+</table>
+</body>
+</html>
